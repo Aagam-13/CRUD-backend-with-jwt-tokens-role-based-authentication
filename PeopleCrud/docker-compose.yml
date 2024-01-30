@@ -1,0 +1,17 @@
+﻿version: '3.8'
+
+services:
+  webapp:
+    image: my-peoplecrud-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    environment:
+      DOTNET_ENVIRONMENT: "Production"
+    volumes:
+      - Docker-keys:/app
+
+volumes:
+  Docker-keys:
